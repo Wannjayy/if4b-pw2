@@ -9,7 +9,7 @@ o> Nama variabel diawali dengan huruf atau garis bawah (_)
 o> Nama variabel hanya boleh ditulis dengan alphanumeric a-z,
 A-Z, 0-9, dan garis bawah (_)
 o> Nama variabel yang lebih dari satu kata dapat dipisahkan
-dengan garis bawah. contoh: jenis_kelamin, gol_darah, ...
+dengan garis bawah. contoh: jenis_kelamin, gol_darah, ....
 */
 $npm = "2125250050";
 $nama = "Ahmad Wahana Jaya";
