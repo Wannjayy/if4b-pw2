@@ -97,7 +97,6 @@ foreach ($nilais as $nilai) {
     $total_k += $nilai['k'];
     $total_m += getScores($nilai['hm']) * $nilai['k'];
 }
-<<<<<<< HEAD
 
 function getPredikatKelulusan($ipk){
     if ($ipk >= 2.50 and $ipk <= 2.75){
@@ -133,17 +132,3 @@ echo '<tr style="text-align: center;">
 </tr>';
 echo "</tabLe>";
 ?>
-=======
-$ipk = number_format($total_m / $total_k,2);
-echo '<tr style="text-align: center;">
-<td colspan=5 style="text-align: right; background-color: #7ccbaa; padding-top: 5px; padding-bottom: 5px;"><strong>Jumlah</strong></td>
-<td style="background-color: #e8eff9;">'.$total_k.'</td>
-<td style="background-color: #e8eff9;">'.$total_m.'</td>
-</tr>';
-echo '<tr style="text-align: center;">
-<td colspan=5 style="text-align: right; background-color: #dfd79b; padding-top: 5px; padding-bottom: 5px;"><strong>Indeks Prestasi Kumulatif (IPK)</strong></td>
-<td colspan=2 style="background-color: #e8eff9;"><strong>'.$ipk.'</strong></td>
-</tr>';
-echo "</tabLe>";
-?>
->>>>>>> 500038120e2e5e9ebe522b286d341ab5953cdd8c
