@@ -1,5 +1,5 @@
 <?php
-//data tabel
+//data tabel nilai
 $nilais = [
     ["no" => 1,
     "mata_kuliah" => "Algoritma dan Struktur Data I",
