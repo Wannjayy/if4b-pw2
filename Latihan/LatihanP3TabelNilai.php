@@ -34,13 +34,13 @@ $nilais = [
     ["no" => 6,
     "mata_kuliah" => "Kalkulus I",
     "kode_mk" => "IF0003",
-    "hm" => "B",
+    "hm" => "D",
     "k" => 4,],
 
     ["no" => 7,
-    "mata_kuliah" => "Turu",
-    "kode_mk" => "Not IF",
-    "hm" => "S+",
+    "mata_kuliah" => "Kalkulus II",
+    "kode_mk" => "IF0007",
+    "hm" => "E",
     "k" => 4,],
 ];
 
@@ -55,6 +55,8 @@ function getScores($score){
         "C+" => 2.30,
         "C" => 2.00,
         "C-" => 1.70,
+        "D" => 1.00,
+        "E" => 0.00,
     ];
     return $point[$score];
 };
