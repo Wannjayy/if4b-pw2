@@ -1,4 +1,5 @@
 <?php
+
 //data tabel nilai
 $nilais = [
     ["no" => 1,
@@ -63,6 +64,7 @@ $nilais = [
     "k" => 4,],
 ];
 
+//function nilai huruf (hm)
 function getScores($score){
     $point = [
         "S+" => 5.00,
@@ -80,6 +82,7 @@ function getScores($score){
     return $point[$score];
 };
 
+// variabel total_k(sks), total_m(sks*nilai am), dan total_k_d(total jumlah sks yang mendapat nilai D)
 $total_k = 0;
 $total_m = 0;
 $total_k_d = 0;
@@ -98,7 +101,7 @@ echo '<tr style="background-color: #224466; color: white;">
 <td style="text-align: center;">M</td>
 </tr>';
 
-
+//menampilkan array nilais
 foreach($nilais as $data => $nilai){
     if ($data % 2 == 0) {
         echo "<tr style='background-color: white; text-align: center;'>";
@@ -115,11 +118,13 @@ foreach($nilais as $data => $nilai){
     "</tr>";
 }
 
+//menjumlahkan seluruh sks(total_k) dan nilai m
 foreach ($nilais as $nilai) {
     $total_k += $nilai['k'];
     $total_m += getScores($nilai['hm']) * $nilai['k'];
 }
 
+//fuction predikat kelulusan
 function getPredikatKelulusan($ipk){
     if ($ipk >= 0.00 and $ipk <= 1.99){
         return "Dengan Hinaan";
@@ -141,6 +146,7 @@ function getPredikatKelulusan($ipk){
     }
 }
 
+//variabel ipk (nilai m / sks)
 $ipk = number_format($total_m / $total_k,2);
 
 echo '<tr style="text-align: center;">
@@ -160,10 +166,10 @@ echo '<tr style="text-align: center;">
 </tr>';
 
 echo '<tr>
-<td colspan=7 style="text-align: center;">=====</td>
+<td colspan=7 style="text-align: center;">Nama : Ahmad Wahana Jaya<br>NPM : 2125250050</td>
 </tr>';
 
-
+//menghitung banyak sks yang mendapat nilai D
 foreach ($nilais as $data => $nilai) {
     //jumlah sks total nilai D
     if ($nilai['hm'] == 'D') {
