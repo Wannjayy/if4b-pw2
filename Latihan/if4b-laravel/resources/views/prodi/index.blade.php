@@ -16,7 +16,7 @@
     @foreach ($dataprodis as $item)
     <tr>
         <td>{{$item->nama_prodi}}</td>
-        <td>{{$item->fakultas_id}}</td>
+        <td>{{$item->fakultas->nama_fakultas}}</td>
         <td>{{$item->created_at}}</td>
     </tr>
     @endforeach

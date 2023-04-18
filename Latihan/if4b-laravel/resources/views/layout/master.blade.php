@@ -9,13 +9,13 @@
 </head>
 <body>
     <div class="container-fluid">
-        <h1>Universitas MDP</h1>
+        <h1 class="text-center">Universitas MDP</h1>
         <hr>
-        <h1 class="bg-primary">@yield('subtitle')</h1>
+        <h1 class="text-center">@yield('subtitle')</h1>
         <hr>
         @yield('content')
         <hr>
-        &copy;{{date('Y')}} Universitas Multi Data Palembang
+        <p class="text-center">&copy;{{date('Y')}} Universitas Multi Data Palembang</p>
     </div>
         
 </body>

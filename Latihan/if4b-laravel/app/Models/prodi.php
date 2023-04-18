@@ -9,4 +9,8 @@ class prodi extends Model
 {
     use HasFactory;
     protected $table = 'prodi';
+
+    public function fakultas(){
+        return $this->belongsTo(fakultas::class, 'fakultas_id');
+    }
 }
