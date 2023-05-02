@@ -61,7 +61,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{{url('prodi')}}">
             <i class="mdi mdi-view-quilt menu-icon"></i>
-            <span class="menu-title">Prodi</span>
+            <span class="menu-title">Program Studi</span>
             {{-- <div class="badge badge-info badge-pill">2</div> --}}
           </a>
         </li>
