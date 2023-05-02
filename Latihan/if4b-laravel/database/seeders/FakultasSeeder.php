@@ -20,15 +20,15 @@ class FakultasSeeder extends Seeder
         [
                 [
                     //'id' => Str::uuid(),
-                    'id' => Uuid::uuid4(),
+                    'id' =>null,
                     'nama_fakultas' => 'Fakultas Ilmu Komputer dan Rekayasa',
                     'nama_dekan' => 'Dr.Wijang Widhiarso, M.Kom.',
                     'nama_wakil_dekan' => 'Yoannita, M.Kom.',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
-                    'id' => Uuid::uuid4(),
-                    'nama_fakultas' => 'Fakultas Ilmu Komputer dan Rekayasa',
+                    'id' => null,
+                    'nama_fakultas' => 'Fakultas Ilmu Ekonomi dan Bisnis',
                     'nama_dekan' => 'Dr.Yulizar Kasih,S.E.,M.Si.',
                     'nama_wakil_dekan' => 'Dr. Anton Arisman, S.E.,M.Si',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
