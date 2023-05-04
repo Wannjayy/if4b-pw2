@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\FakultasController;
-use App\Http\Controllers\ProdiControllers;
+use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,5 +39,9 @@ Route::get('/dosen/index',function(){
 Route::get('prodi', [ProdiControllers::class, 'index'])->name('user');
 
 Route::resource('fakultas', FakultasController::class);
+
+Route::resource('prodi', ProdiController::class);
+
+
 
 

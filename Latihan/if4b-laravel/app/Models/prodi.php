@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 
-class prodi extends Model
+class Prodi extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUuids;
     protected $table = 'prodi';
 
     public function fakultas(){
-        return $this->belongsTo(fakultas::class, 'fakultas_id');
+        return $this->belongsTo(Fakultas::class, 'fakultas_id');
     }
 }

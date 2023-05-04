@@ -9,6 +9,9 @@
   <!-- base:css -->
   <link rel="stylesheet" href="{{asset('vendors/mdi/css/materialdesignicons.min.css')}}">
   <link rel="stylesheet" href="{{asset('vendors/css/vendor.bundle.base.css')}}">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.min.css">
+
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
@@ -18,6 +21,8 @@
   <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" />
 </head>
 <body>
+  <!-- SweetAlert2 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
   <div class="container-scroller d-flex">
     <div class="row p-0 m-0 proBanner" id="proBanner">
       <div class="col-md-12 p-0 m-0">

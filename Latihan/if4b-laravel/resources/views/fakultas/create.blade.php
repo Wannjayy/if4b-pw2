@@ -13,21 +13,21 @@
                     @csrf
                     <div class="form-group">
                       <label for="nama_fakultas">Nama Fakultas</label>
-                      <input type="text" class="form-control" name="nama_fakultas" placeholder="">
+                      <input type="text" class="form-control" name="nama_fakultas" placeholder="Nama Fakultas">
                       @Error('nama_fakultas')
                       <span class="text-danger">{{$message}}</span>
                       @enderror
                     </div>
                     <div class="form-group">
                       <label for="nama_dekan">Nama Dekan</label>
-                      <input type="text" class="form-control" name="nama_dekan" placeholder="">
+                      <input type="text" class="form-control" name="nama_dekan" placeholder="Nama Dekan">
                       @Error('nama_dekan')
                       <span class="text-danger">{{$message}}</span>
                       @enderror
                     </div>
                     <div class="form-group">
                       <label for="nama_wakil_dekan">Nama Wakil Dekan</label>
-                      <input type="text" class="form-control" name="nama_wakil_dekan" placeholder="">
+                      <input type="text" class="form-control" name="nama_wakil_dekan" placeholder="Nama Wakil Dekan">
                       @Error('nama_wakil_dekan')
                       <span class="text-danger">{{$message}}</span>
                       @enderror
@@ -37,8 +37,8 @@
                         <input type="checkbox" class="form-check-input">
                       <i class="input-helper"></i></label>
                     </div>
-                    <button type="submit" class="btn btn-primary me-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <button type="submit" class="btn btn-primary me-2">Simpan</button>
+                    <a  href="{{route('fakultas.index')}}" class="btn btn-rounded btn-light">Batal</a>
                   </form>
                 </div>
               </div>

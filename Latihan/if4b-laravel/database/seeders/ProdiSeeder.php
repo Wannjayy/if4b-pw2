@@ -21,26 +21,26 @@ class ProdiSeeder extends Seeder
                     //'id' => Str::uuid(),
                     'id' => Uuid::uuid4(),
                     'nama_prodi' => 'Sistem Informasi',
-                    'fakultas_id' => 1,
+                    'fakultas_id' => 'da4d128e-4ed0-4935-83de-71bfbb0a818c',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
                     'id' => Uuid::uuid4(),
                     'nama_prodi' => 'Informatika',
-                    'fakultas_id' => 1,
+                    'fakultas_id' => 'da4d128e-4ed0-4935-83de-71bfbb0a818c',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
                     //'id' => Str::uuid(),
                     'id' => Uuid::uuid4(),
                     'nama_prodi' => 'Akuntansi',
-                    'fakultas_id' => 2,
+                    'fakultas_id' => 'd94f4283-36d7-4b1d-a8aa-3c1edd88eac3',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
                     'id' => Uuid::uuid4(),
                     'nama_prodi' => 'Manajemen',
-                    'fakultas_id' => 2,
+                    'fakultas_id' => 'd94f4283-36d7-4b1d-a8aa-3c1edd88eac3',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ]
         ]);
