@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid('id');
             $table->primary('id');
             $table->string('nama_prodi');
-            $table->unsignedInteger('fakultas_id');
+            $table->uuid('fakultas_id');
             $table->foreign('fakultas_id')
             ->references('id')->on('fakultas')
             ->cascadeOnDelete()->cascadeOnUpdate();
