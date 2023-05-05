@@ -7,6 +7,9 @@
   <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
+        @if (Session::get('success'))
+        <div class="alert alert-success">{{Session::get('success')}}</div>
+        @endif
         <h4 class="card-title">Program Studi</h4>
         <a href="{{route('prodi.create')}}" class="btn btn-primary">Tambah</a>
         <div class="table-responsive">
@@ -28,7 +31,7 @@
                   <form id="delete-form-{{ $item->id }}" action="{{ route('prodi.destroy', $item->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                  </form>   
+                  </form>
                   <button type="submit" class="btn btn-danger" onclick="
                     event.preventDefault();
                     Swal.fire({
@@ -42,8 +45,8 @@
                         document.getElementById('delete-form-{{ $item->id }}').submit();
                       }
                     });
-                  ">Hapus</button>                             
-                </td>                
+                  ">Hapus</button>
+                </td>
               </tr>
               @endforeach
             </tbody>
