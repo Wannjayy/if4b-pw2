@@ -13,7 +13,7 @@
                     @csrf
                     <div class="form-group">
                       <label for="nama_fakultas">Nama Fakultas</label>
-                      <input type="text" class="form-control" name="nama_fakultas" placeholder="Nama Fakultas">
+                      <input type="text" class="form-control" name="nama_fakultas" value="{{old('nama_fakultas')}}"  placeholder="Nama Fakultas">
                       @Error('nama_fakultas')
                       <span class="text-danger">{{$message}}</span>
                       @enderror

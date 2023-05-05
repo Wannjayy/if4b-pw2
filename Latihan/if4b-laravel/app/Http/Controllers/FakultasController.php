@@ -35,7 +35,7 @@ class FakultasController extends Controller
     {
         //dd($request);
         $validasi = $request->validate([
-            'nama_fakultas' => 'required',
+            'nama_fakultas' => 'required|unique:fakultas,nama_fakultas',
             'nama_dekan' => 'required',
             'nama_wakil_dekan' => 'required'
         ]);
@@ -46,7 +46,7 @@ class FakultasController extends Controller
         $fakultas->nama_wakil_dekan = $validasi['nama_wakil_dekan'];
         $fakultas->save();
 
-        return redirect()->route('fakultas.index')->with('success',"Data Fakultas ".$validasi['nama_fakultas']."Bberhasil Disimpan");
+        return redirect()->route('fakultas.index')->with('success',"Data Fakultas ".$validasi['nama_fakultas']."Berhasil Disimpan");
     }
 
     /**

@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('prodi', function (Blueprint $table) {
+        Schema::create('mahasiswas', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('nama_prodi')->unique();
-            $table->uuid('fakultas_id');
-            $table->foreign('fakultas_id')
-            ->references('id')->on('fakultas')
+            $table->string('npm')->unique();
+            $table->string('nama_mahasiswa');
+            $table->date('tanggal_lahir');
+            $table->string('kota_lahir');
+            $table->string('foto')->nullable();
+            $table->uuid('prodi_id');
+            $table->foreign('prodi_id')
+            ->references('id')->on('prodi')
             ->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('prodi');
+        Schema::dropIfExists('mahasiswas');
     }
 };
