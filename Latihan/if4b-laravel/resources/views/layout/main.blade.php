@@ -72,6 +72,13 @@
             {{-- <div class="badge badge-info badge-pill">2</div> --}}
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url('mahasiswa')}}">
+            <i class="mdi mdi-view-quilt menu-icon"></i>
+            <span class="menu-title">Mahasiswa</span>
+            {{-- <div class="badge badge-info badge-pill">2</div> --}}
+          </a>
+        </li>
         <li class="nav-item sidebar-category">
           <p>Components</p>
           <span></span>
@@ -162,10 +169,35 @@
             <a class="navbar-brand brand-logo" href="{{asset('index.html')}}"><img src="{{asset('images/logo.svg')}}" alt="logo"/></a>
             <a class="navbar-brand brand-logo-mini" href="{{asset('index.html')}}"><img src="{{asset('images/logo-mini.svg')}}" alt="logo"/></a>
           </div>
-          <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Welcome back, Brandon Haynes</h4>
+          <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Welcome back, Wannjay</h4>
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item">
-              <h4 class="mb-0 font-weight-bold d-none d-xl-block">{{date('d M Y')}}</h4>
+              <h4 id="waktu" class="mb-0 font-weight-bold d-none d-xl-block"></h4>
+<script>
+    // fungsi untuk menampilkan waktu terus menerus
+    function tampilkanWaktu() {
+        // set timezone ke Indonesia/Jakarta
+        var waktu = new Date();
+        var options = {
+            timeZone: 'Asia/Jakarta',
+            weekday: 'long', // menampilkan nama hari dengan format panjang
+            day: 'numeric', // menampilkan tanggal dengan format angka
+            month: 'long', // menampilkan nama bulan dengan format panjang
+            year: 'numeric', // menampilkan tahun dengan format angka
+            hour: 'numeric', // menampilkan jam dengan format angka
+            minute: 'numeric', // menampilkan menit dengan format angka
+            second: 'numeric', // menampilkan detik dengan format angka
+            hour12: false // menampilkan jam dalam format 24 jam
+        }
+        var waktuString = waktu.toLocaleString('id-ID', options);
+        
+        // tampilkan waktu pada elemen dengan id "waktu"
+        document.getElementById("waktu").innerHTML = waktuString;
+    }
+
+    // panggil fungsi tampilkanWaktu setiap detik
+    setInterval(tampilkanWaktu, 1000);
+</script>            
             </li>
             <li class="nav-item dropdown me-1">
               <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-bs-toggle="dropdown">
@@ -355,10 +387,11 @@
 
   <script>
     // In your Javascript (external .js resource or <script> tag)
-$(document).ready(function() {
+  $(document).ready(function() {
     $('.js-example-basic-single').select2();
-});
+  });
   </script>
+  <script src="{{ asset('js/form.js') }}"></script>
 </body>
 
 </html>
