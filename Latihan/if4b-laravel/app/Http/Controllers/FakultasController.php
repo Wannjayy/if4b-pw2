@@ -76,14 +76,19 @@ class FakultasController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Fakultas $fakultas)
+    public function destroy(string $id)
     {
-        if ($fakultas->prodi()->exists()) {
-            return back()->withErrors('Fakultas memiliki prodi terkait dan tidak dapat dihapus.');
-        }
+        $fakultas = Fakultas::where('id', $id)->first();
+        // dd($fakultas);
         $fakultas->delete();
-
         return redirect()->route('fakultas.index')
         ->with('success', 'Fakultas berhasil dihapus.');
+        // if ($fakultas->prodi()->exists()) {
+        //     return back()->withErrors('Fakultas memiliki prodi terkait dan tidak dapat dihapus.');
+        // }
+        // $fakultas->delete();
+
+        // return redirect()->route('fakultas.index')
+        // ->with('success', 'Fakultas berhasil dihapus.');
     }
 }
