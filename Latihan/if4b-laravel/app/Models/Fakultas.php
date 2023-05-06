@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Fakultas extends Model
 {
     use HasFactory, HasUuids;
+    protected $table = 'fakultas';
+
 
     public function prodi(){
         return $this->hasMany(Prodi::class);

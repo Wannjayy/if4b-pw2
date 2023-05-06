@@ -208,7 +208,7 @@
                 <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                      <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+                      <img src="{{asset('images/faces/face4.jpg')}}" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow">
                     <h6 class="preview-subject ellipsis font-weight-normal">David Grey
@@ -391,7 +391,6 @@
     $('.js-example-basic-single').select2();
   });
   </script>
-  <script src="{{ asset('js/form.js') }}"></script>
 </body>
 
 </html>

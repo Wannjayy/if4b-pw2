@@ -32,9 +32,27 @@ class MahasiswaController extends Controller
     public function store(Request $request)
     {
         $validasi = $request->validate([
-            'npm' => 'required|unique:prodi,nama_prodi',
-            'nama' => 'required',
+            'npm' => 'required|unique:mahasiswa,npm',
+            'nama_mahasiswa' => 'required',
+            'tanggal_lahir' => 'required',
+            'kota_lahir' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,pdf,doc,docx|max:2048',
+            'prodi_id' => 'required',
         ]);
+
+        $mahasiswa = new Mahasiswa();
+        $mahasiswa->npm = $validasi['npm'];
+        $mahasiswa->nama_mahasiswa = $validasi['nama_mahasiswa'];
+        $mahasiswa->tanggal_lahir = $validasi['tanggal_lahir'];
+        $mahasiswa->kota_lahir = $validasi['kota_lahir'];
+        $foto = $request->file('foto')->getClientOriginalName();
+        $mahasiswa->foto = $foto;
+        $mahasiswa->prodi_id = $validasi['prodi_id'];
+        $mahasiswa->save();
+
+        $request->file('foto')->move(public_path('images/mahasiswa'), $foto);
+
+        return redirect()->route('mahasiswa.index')->with('success', 'Data Mahasiswa berhasil ditambahkan.');
     }
 
     /**
@@ -66,6 +84,9 @@ class MahasiswaController extends Controller
      */
     public function destroy(Mahasiswa $mahasiswa)
     {
-        //
+        $mahasiswa->delete();
+
+        return redirect()->route('mahasiswa.index')
+        ->with('success', 'Data Mahasiswa berhasil dihapus.');
     }
 }

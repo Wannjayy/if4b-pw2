@@ -26,7 +26,7 @@
                         <option value="{{ $fakultas->id }}">{{ $fakultas->nama_fakultas }}</option>
                         @endforeach
                       </select>
-                      @error('nama_fakultas')
+                      @error('fakultas_id')
                          <span class="text-danger">{{$message}}</span>
                       @enderror
                     </div>
