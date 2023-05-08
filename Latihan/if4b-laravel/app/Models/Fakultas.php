@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fakultas extends Model
 {
-    use HasFactory, HasUuids;
+    use HasFactory;
     protected $table = 'fakultas';
+
+    protected $keyType = 'string';
+    public $incrementing = false;
+    protected $fillable = ['id', 'nama_fakultas', 'nama_dekan','nama_wakil_dekan'];
 
 
     public function prodi(){

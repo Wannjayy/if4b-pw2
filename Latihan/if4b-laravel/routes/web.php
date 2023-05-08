@@ -45,7 +45,3 @@ Route::resource('prodi', ProdiController::class);
 
 Route::resource('mahasiswa', MahasiswaController::class);
 
-
-
-
-

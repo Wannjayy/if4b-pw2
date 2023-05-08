@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Prodi;
 use Illuminate\Http\Request;
 use App\Models\Fakultas;
+use Illuminate\Support\Str;
 
 
 
@@ -40,6 +41,7 @@ class ProdiController extends Controller
         ]);
 
         $prodi = new Prodi();
+        $prodi->id = Str::Uuid();
         $prodi->nama_prodi = $validasi['nama_prodi'];
         $prodi->fakultas_id = $validasi['fakultas_id'];
         $prodi->save();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Fakultas;
 use Illuminate\Http\Request;
 use App\Models\Prodi;
+use Illuminate\Support\Str;
 
 class FakultasController extends Controller
 {
@@ -40,7 +41,9 @@ class FakultasController extends Controller
             'nama_wakil_dekan' => 'required'
         ]);
 
+
         $fakultas = new Fakultas();
+        $fakultas->id = Str::Uuid();
         $fakultas->nama_fakultas = $validasi['nama_fakultas'];
         $fakultas->nama_dekan = $validasi['nama_dekan'];
         $fakultas->nama_wakil_dekan = $validasi['nama_wakil_dekan'];

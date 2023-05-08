@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 use App\Models\Prodi;
+use Illuminate\Support\Str;
 
 class MahasiswaController extends Controller
 {
@@ -13,8 +14,10 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $data = Mahasiswa::all();
-        return view('mahasiswa.index')->with('datamahasiswas', $data);
+        $dataprodis = Prodi::all();
+        $datamahasiswas = Mahasiswa::with('prodi')->orderBy('created_at', 'DESC')->get();
+
+        return view('mahasiswa.index', compact('datamahasiswas', 'dataprodis'));
     }
 
     /**
@@ -41,6 +44,7 @@ class MahasiswaController extends Controller
         ]);
 
         $mahasiswa = new Mahasiswa();
+        $mahasiswa->id = Str::Uuid();
         $mahasiswa->npm = $validasi['npm'];
         $mahasiswa->nama_mahasiswa = $validasi['nama_mahasiswa'];
         $mahasiswa->tanggal_lahir = $validasi['tanggal_lahir'];
@@ -84,7 +88,16 @@ class MahasiswaController extends Controller
      */
     public function destroy(Mahasiswa $mahasiswa)
     {
+        $foto = $mahasiswa->foto;
         $mahasiswa->delete();
+
+        if ($foto !== null) { //jika ada file foto terkait, hapus file foto tersebut
+            $path = public_path('images/mahasiswa/' . $foto); //mengambil alamat file foto pada direktori
+            
+            if (file_exists($path)) { //jika file foto ada pada direktori, hapus file foto tersebut
+                unlink($path);
+            }
+        }
 
         return redirect()->route('mahasiswa.index')
         ->with('success', 'Data Mahasiswa berhasil dihapus.');
